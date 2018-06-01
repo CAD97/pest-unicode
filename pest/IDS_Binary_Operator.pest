@@ -2,4 +2,3 @@ IDS_Binary_Operator =
   { '⿰'..'⿱'
   | '⿴'..'⿻'
   }
-

@@ -12,9 +12,9 @@ fn main() -> Result<(), Box<Error>> {
         let mut buffer = String::new();
         if ranges.len() > 0 {
             writeln!(buffer, "{} =", name)?;
-            writeln!(buffer, "  {{ '{}'..'{}'", ranges[0].0, ranges[0].1)?;
+            writeln!(buffer, "  {{ '{}'..'{}'", ranges[0].0.escape_debug(), ranges[0].1.escape_debug())?;
             for range in &ranges[1..] {
-                writeln!(buffer, "  | '{}'..'{}'", range.0, range.1)?;
+                writeln!(buffer, "  | '{}'..'{}'", range.0.escape_debug(), range.1.escape_debug())?;
             }
             writeln!(buffer, "  }}")?;
         } else {
@@ -26,7 +26,7 @@ fn main() -> Result<(), Box<Error>> {
         path.push(name);
         path.set_extension("pest");
         let mut file = File::create(path)?;
-        writeln!(file, "{}", buffer)?;
+        write!(file, "{}", buffer)?;
     }
 
     Ok(())

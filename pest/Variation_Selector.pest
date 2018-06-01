@@ -3,4 +3,3 @@ Variation_Selector =
   | '︀'..'️'
   | '󠄀'..'󠇯'
   }
-

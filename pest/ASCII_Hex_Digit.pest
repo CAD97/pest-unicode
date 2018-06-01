@@ -3,4 +3,3 @@ ASCII_Hex_Digit =
   | 'A'..'F'
   | 'a'..'f'
   }
-
